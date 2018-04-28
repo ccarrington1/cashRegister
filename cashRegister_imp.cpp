@@ -4,11 +4,6 @@
 
 using namespace std;
 
-int cashRegister::getCurrentBalance() const
-{
-	return cashOnHand;
-}
-
 cashRegister::cashRegister(int cashIn)
 {
 	if (cashIn >= 0)
@@ -16,6 +11,27 @@ cashRegister::cashRegister(int cashIn)
 	else
 		cashOnHand = 500;
 }
+
+
+int cashRegister::getCurrentBalance() const
+{
+	return cashOnHand;
+}
+
+friend ostream& operator<<(ostream&, const cashRegister&)
+{
+
+	return object;
+};
+
+
+cashRegister cashRegister::operator+(int& amount) const {
+
+	cashRegister.total;
+	added.total = cashOnHand
+		return (cashOnHand);
+};
+
 
 
 
