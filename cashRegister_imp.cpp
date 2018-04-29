@@ -18,20 +18,91 @@ int cashRegister::getCurrentBalance() const
 	return cashOnHand;
 }
 
-friend ostream& operator<<(ostream&, const cashRegister&)
+void cashRegister::acceptAmount(int amountIn)
 {
 
-	return object;
+	cashOnHand = +amountIn;
+
+}
+
+
+
+cashRegister cashRegister::operator+(const cashRegister& add) {
+
+	cashRegister temp;
+	temp.cashOnHand = cashOnHand + add.cashOnHand;
+		return temp;
+};
+
+cashRegister cashRegister::operator-(const cashRegister& sub) 
+{
+	cashRegister temp;
+	temp.cashOnHand = cashOnHand - sub.cashOnHand;
+	return temp;
+}
+
+bool cashRegister::operator==(const cashRegister& obj) const
+{
+
+	if (cashOnHand == obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
+
+bool cashRegister::operator>(const cashRegister& obj) const
+{
+
+	if (cashOnHand > obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
+
+
+ostream& operator<<(ostream& oobj, const cashRegister& obj)
+{
+	oobj << obj.cashOnHand;
+	return oobj;
 };
 
 
-cashRegister cashRegister::operator+(int& amount) const {
 
-	cashRegister.total;
-	added.total = cashOnHand
-		return (cashOnHand);
-};
+bool cashRegister::operator!=(const cashRegister& obj) const
+{
 
+	if (cashOnHand != obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
+
+bool cashRegister::operator<=(const cashRegister& obj) const
+{
+
+	if (cashOnHand <= obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
+
+bool cashRegister::operator<(const cashRegister& obj) const
+{
+
+	if (cashOnHand < obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
+
+bool cashRegister::operator>=(const cashRegister& obj) const
+{
+
+	if (cashOnHand >= obj.cashOnHand)
+		return true;
+	else
+		return false;
+}
 
 
 

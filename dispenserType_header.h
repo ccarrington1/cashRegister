@@ -14,9 +14,10 @@ public:
 
 	void makeSale();
 
-	dispenserType operator++();
+	//dispenserType operator++();
 	dispenserType operator++(int);
-	dispenserType operator--();
+
+	//dispenserType operator--();
 	dispenserType operator--(int);
 
 	dispenserType(int setNoOfItems = 50, int setCost = 50);

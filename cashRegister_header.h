@@ -10,8 +10,10 @@ class cashRegister
 public:
 	int getCurrentBalance() const;
 
-	cashRegister operator+(int& amount) const;
-	cashRegister operator-(int& amount) const;
+	void acceptAmount(int amountIn);
+
+	cashRegister operator+(const cashRegister&);
+	cashRegister operator-(const cashRegister&);
 
 	bool operator==(const cashRegister& cashR) const;
 	bool operator!=(const cashRegister& cashR) const;
